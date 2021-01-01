@@ -28,6 +28,10 @@ class RaceInvite extends Model
         static::created(function(self $invite) {
             dispatch(new SendInviteToRecipient($invite));
         });
+
+        static::updated(function(self $invite) {
+            dispatch(new SendInviteToRecipient($invite));
+        });
     }
 
     public function race()

@@ -4,7 +4,6 @@ use App\Http\Controllers\Api\RaceController;
 use App\Http\Controllers\Api\RaceInviteController;
 use App\Http\Controllers\Api\RaceParticipantController;
 use Orion\Facades\Orion;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 

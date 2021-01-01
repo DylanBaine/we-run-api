@@ -15,6 +15,8 @@ class CreateRacesTable extends Migration
     {
         Schema::create('races', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->longText('description');
             $table->integer('created_by_id')->index();
             $table->date('start_time')->index();
             $table->float('distance_number');

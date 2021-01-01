@@ -15,8 +15,8 @@ class CreateRaceParticipantsTable extends Migration
     {
         Schema::create('race_participants', function (Blueprint $table) {
             $table->id();
-            $table->integer('participant_id')->index();
-            $table->integer('inviter_id')->index();
+            $table->integer('user_id')->index();
+            $table->integer('inviter_id')->index()->nullable();
             $table->integer('race_id')->index();
             $table->timestamps();
         });

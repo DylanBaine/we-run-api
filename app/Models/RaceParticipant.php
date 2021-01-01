@@ -10,12 +10,12 @@ class RaceParticipant extends Model
     use HasFactory;
 
     protected $fillable = [
-        'participant_id',
+        'user_id',
         'inviter_id',
         'race_id',
     ];
 
-    public function participant()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

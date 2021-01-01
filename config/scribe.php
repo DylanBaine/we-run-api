@@ -46,6 +46,7 @@ return [
              * The route can be referenced by name or path here. Wildcards are supported.
              */
             'include' => [
+                'api/*'
                 // 'users.index', 'healthcheck*'
             ],
 
@@ -54,7 +55,8 @@ return [
              * The route can be referenced by name or path here. Wildcards are supported.
              */
             'exclude' => [
-                // '/health', 'admin.*'
+                'docs*',
+                'sanctum*'
             ],
 
             /*
@@ -130,7 +132,7 @@ return [
      * - "static" will generate a static HTMl page in the /public/docs folder,
      * - "laravel" will generate the documentation as a Blade view, so you can add routing and authentication.
      */
-    'type' => 'static',
+    'type' => 'laravel',
 
     /*
      * Settings for `static` type output.
@@ -178,7 +180,7 @@ return [
         /*
          * Set this to true if any endpoints in your API use authentication.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Set this to true if your API should be authenticated by default. If so, you must also set `enabled` (above) to true.
@@ -281,7 +283,7 @@ INTRO
     /*
      * Name for the group of endpoints which do not have a @group set.
      */
-    'default_group' => 'Endpoints',
+    'default_group' => 'API',
 
     /*
      * Custom logo path. This will be used as the value of the src attribute for the <img> tag,

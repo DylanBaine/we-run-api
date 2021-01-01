@@ -10,6 +10,8 @@ class Race extends Model
     use HasFactory;
 
     protected $fillable = [
+        'name',
+        'description',
         'created_by_id',
         'start_time',
         'distance_number',

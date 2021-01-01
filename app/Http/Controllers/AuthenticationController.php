@@ -6,8 +6,19 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group Auth
+ */
 class AuthenticationController extends Controller
 {
+
+    /**
+     * Register a new user
+     * 
+     * @bodyParam name string required
+     * @bodyParam email string required
+     * @bodyParam password string required
+     */
     public function register(Request $request)
     {
         $data = $request->validate([
@@ -22,11 +33,21 @@ class AuthenticationController extends Controller
         return $response;
     }
 
+    /**
+     * Get the current user
+     *
+     */
     public function user(Request $request)
     {
         return $request->user();
     }
 
+    /**
+     * Log In
+     * 
+     * @bodyParam email string required
+     * @bodyParam password string required
+     */
     public function login(Request $request)
     {
         $data = $request->validate([
@@ -44,6 +65,10 @@ class AuthenticationController extends Controller
         }
     }
 
+    /**
+     * Delete a users api tokens
+     * 
+     */
     public function deleteTokens(Request $request)
     {
         $request->user()->tokens()->delete();
