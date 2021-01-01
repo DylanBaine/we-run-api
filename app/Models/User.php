@@ -73,15 +73,4 @@ class User extends Authenticatable
         return $this->hasMany(Race::class, 'created_by_id');
     }
 
-    public function sendInviteForRace(Race $race, string $contactMethodName, string $contactMethodValue): RaceInvite
-    {
-        $invite = $this->invites()->create([
-            'contact_method_value' => $contactMethodValue,
-            'contact_method_name' => $contactMethodName,
-            'race_id' => $race->id,
-        ]);
-        dispatch(new SendInviteToRecipient($invite));
-        return $invite;
-    }
-
 }
