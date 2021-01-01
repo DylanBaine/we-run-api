@@ -12,7 +12,8 @@ class Race extends Model
     protected $fillable = [
         'created_by_id',
         'start_time',
-        'distance',
+        'distance_number',
+        'distance_units'
     ];
 
     protected $casts = [

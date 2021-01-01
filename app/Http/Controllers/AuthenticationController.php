@@ -15,14 +15,9 @@ class AuthenticationController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:10',
         ]);
-        /**
-         * @var User $user
-         */
-        $user = User::create($data);
-        $token = $user->createToken('auth');
-        Auth::login($user);
+        $user = User::registerAndLogIn($data['name'], $data['email'], $data['password']);
         $response =  array_merge($user->toArray(), [
-            'token' => $token->plainTextToken,
+            'token' => $user->plainTextToken,
         ]);
         return $response;
     }

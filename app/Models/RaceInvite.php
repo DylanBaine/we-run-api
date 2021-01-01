@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RaceInvite extends Model
 {
@@ -17,6 +18,13 @@ class RaceInvite extends Model
         'inviter_id',
     ];
 
+    protected static function booting()
+    {
+        static::creating(function(self $invite) {
+            $invite->code = Str::random(4);
+        });
+    }
+
     public function race()
     {
         return $this->belongsTo(Race::class);
@@ -25,5 +33,13 @@ class RaceInvite extends Model
     public function inviter()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function acceptBy(User $user): RaceParticipant
+    {
+        return $this->race->participants()->create([
+            'participant_id' => $user->id,
+            'inviter_id' => $this->inviter_id,
+        ]);
     }
 }
