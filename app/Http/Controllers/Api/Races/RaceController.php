@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Races;
 
 use App\Models\Race;
-use Orion\Http\Controllers\Controller;
 use Orion\Http\Requests\Request;
+use Orion\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * @group Races
@@ -12,6 +13,11 @@ use Orion\Http\Requests\Request;
 class RaceController extends Controller
 {
     protected $model = Race::class;
+
+    public function buildIndexFetchQuery(Request $request, array $requestedRelations): Builder
+    {
+        return $request->user()->races();
+    }
 
     /**
      * Create a race.

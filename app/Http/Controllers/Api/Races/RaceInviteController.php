@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Races;
 
 use App\Models\Race;
 use Orion\Http\Requests\Request;
+use Illuminate\Database\Eloquent\Builder;
 use Orion\Http\Controllers\RelationController;
 
 /**
@@ -19,7 +20,7 @@ class RaceInviteController extends RelationController
      * Create a race invite.
      * Will trigger a notification to be sent to the person that is being invited.
      *
-     * @bodyParam contact_method_value string required the user_id, phone number or email of the person to invite
+     * @bodyParam contact_method_value string required the user_id, phone number, or email of the person to invite
      * @bodyParam contect_method_name string required the method to use to notify the user of the invite
      */
     public function store(Request $request, $parentKey)
@@ -31,7 +32,7 @@ class RaceInviteController extends RelationController
      * Update a race invite.
      * Will trigger a notification to be sent to the person that is being invited.
      *
-     * @bodyParam contact_method_value string required the user_id, phone number or email of the person to invite
+     * @bodyParam contact_method_value string required the user_id, phone number, or email of the person to invite
      * @bodyParam contect_method_name string required the method to use to notify the user of the invite
      */
     public function update(Request $request, $parentKey, $relatedKey = null)

@@ -13,7 +13,7 @@ curl -X POST \
     "http://localhost/api/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"excepturi","email":"quibusdam","password":"doloremque"}'
+    -d '{"name":"mollitia","email":"culpa","password":"quae"}'
 
 ```
 
@@ -28,9 +28,9 @@ let headers = {
 };
 
 let body = {
-    "name": "excepturi",
-    "email": "quibusdam",
-    "password": "doloremque"
+    "name": "mollitia",
+    "email": "culpa",
+    "password": "quae"
 }
 
 fetch(url, {
@@ -92,7 +92,7 @@ curl -X POST \
     "http://localhost/api/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"debitis","password":"vel"}'
+    -d '{"email":"cupiditate","password":"mollitia"}'
 
 ```
 
@@ -107,8 +107,8 @@ let headers = {
 };
 
 let body = {
-    "email": "debitis",
-    "password": "vel"
+    "email": "cupiditate",
+    "password": "mollitia"
 }
 
 fetch(url, {

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Laravel\Sanctum\HasApiTokens;
 use App\Jobs\SendInviteToRecipient;
+use App\Models\Social\UserFriend;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
@@ -71,6 +72,12 @@ class User extends Authenticatable
     public function races()
     {
         return $this->hasMany(Race::class, 'created_by_id');
+    }
+
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, 'invitor_id', 'invitee_id')
+            ->whereStatus(UserFriend::STATUS_ACCEPTED);
     }
 
 }

@@ -63,7 +63,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Base URL</p>
 </blockquote>
 <pre><code class="language-yaml">http://localhost</code></pre><h1>Authenticating requests</h1>
-<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p><h1>Auth</h1>
 <h2>Register a new user</h2>
@@ -74,7 +74,7 @@ You can switch the language used with the tabs at the top right (or from the nav
     "http://localhost/api/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"excepturi","email":"quibusdam","password":"doloremque"}'
+    -d '{"name":"mollitia","email":"culpa","password":"quae"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/register"
@@ -86,9 +86,9 @@ let headers = {
 };
 
 let body = {
-    "name": "excepturi",
-    "email": "quibusdam",
-    "password": "doloremque"
+    "name": "mollitia",
+    "email": "culpa",
+    "password": "quae"
 }
 
 fetch(url, {
@@ -141,7 +141,7 @@ fetch(url, {
     "http://localhost/api/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"debitis","password":"vel"}'
+    -d '{"email":"cupiditate","password":"mollitia"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/login"
@@ -153,8 +153,8 @@ let headers = {
 };
 
 let body = {
-    "email": "debitis",
-    "password": "vel"
+    "email": "cupiditate",
+    "password": "mollitia"
 }
 
 fetch(url, {
@@ -331,7 +331,7 @@ fetch(url, {
     "http://localhost/api/races/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["quaerat"]}'
+    -d '{"resources":["similique"]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/races/batch"
@@ -344,7 +344,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "quaerat"
+        "similique"
     ]
 }
 
@@ -389,7 +389,7 @@ fetch(url, {
     "http://localhost/api/races/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["rerum"]}'
+    -d '{"resources":["sit"]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/races/batch"
@@ -402,7 +402,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "rerum"
+        "sit"
     ]
 }
 
@@ -535,7 +535,7 @@ fetch(url, {
     "http://localhost/api/races" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"minima","description":"molestiae","start_time":"molestiae","distance_units":"quis"}'
+    -d '{"name":"ut","description":"eveniet","start_time":"qui","distance_units":"at"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/races"
@@ -547,10 +547,10 @@ let headers = {
 };
 
 let body = {
-    "name": "minima",
-    "description": "molestiae",
-    "start_time": "molestiae",
-    "distance_units": "quis"
+    "name": "ut",
+    "description": "eveniet",
+    "start_time": "qui",
+    "distance_units": "at"
 }
 
 fetch(url, {
@@ -605,11 +605,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/races/reprehenderit" \
+    -G "http://localhost/api/races/hic" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/reprehenderit"
+    "http://localhost/api/races/hic"
 );
 
 let headers = {
@@ -658,13 +658,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/races/nihil" \
+    "http://localhost/api/races/animi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"pariatur","description":"iste","start_time":"ut","distance_units":"perferendis"}'
+    -d '{"name":"animi","description":"dolores","start_time":"eum","distance_units":"qui"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/nihil"
+    "http://localhost/api/races/animi"
 );
 
 let headers = {
@@ -673,10 +673,10 @@ let headers = {
 };
 
 let body = {
-    "name": "pariatur",
-    "description": "iste",
-    "start_time": "ut",
-    "distance_units": "perferendis"
+    "name": "animi",
+    "description": "dolores",
+    "start_time": "eum",
+    "distance_units": "qui"
 }
 
 fetch(url, {
@@ -741,11 +741,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/races/et" \
+    "http://localhost/api/races/ex" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/et"
+    "http://localhost/api/races/ex"
 );
 
 let headers = {
@@ -788,11 +788,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/deleniti/race-invites/search" \
+    "http://localhost/api/races/iusto/race-invites/search" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/deleniti/race-invites/search"
+    "http://localhost/api/races/iusto/race-invites/search"
 );
 
 let headers = {
@@ -835,13 +835,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/voluptatibus/race-invites/batch" \
+    "http://localhost/api/races/quo/race-invites/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["voluptate"]}'
+    -d '{"resources":["itaque"]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/voluptatibus/race-invites/batch"
+    "http://localhost/api/races/quo/race-invites/batch"
 );
 
 let headers = {
@@ -851,7 +851,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "voluptate"
+        "itaque"
     ]
 }
 
@@ -899,13 +899,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "http://localhost/api/races/qui/race-invites/batch" \
+    "http://localhost/api/races/non/race-invites/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["suscipit"]}'
+    -d '{"resources":["pariatur"]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/qui/race-invites/batch"
+    "http://localhost/api/races/non/race-invites/batch"
 );
 
 let headers = {
@@ -915,7 +915,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "suscipit"
+        "pariatur"
     ]
 }
 
@@ -963,11 +963,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/races/culpa/race-invites/batch" \
+    "http://localhost/api/races/consequatur/race-invites/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/culpa/race-invites/batch"
+    "http://localhost/api/races/consequatur/race-invites/batch"
 );
 
 let headers = {
@@ -1010,13 +1010,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/dolores/race-invites/associate" \
+    "http://localhost/api/races/vel/race-invites/associate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"related_key":"aut"}'
+    -d '{"related_key":"eius"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/dolores/race-invites/associate"
+    "http://localhost/api/races/vel/race-invites/associate"
 );
 
 let headers = {
@@ -1025,7 +1025,7 @@ let headers = {
 };
 
 let body = {
-    "related_key": "aut"
+    "related_key": "eius"
 }
 
 fetch(url, {
@@ -1071,11 +1071,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/races/amet/race-invites/nostrum/dissociate" \
+    "http://localhost/api/races/sed/race-invites/facere/dissociate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/amet/race-invites/nostrum/dissociate"
+    "http://localhost/api/races/sed/race-invites/facere/dissociate"
 );
 
 let headers = {
@@ -1123,11 +1123,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/races/culpa/race-invites" \
+    -G "http://localhost/api/races/quasi/race-invites" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/culpa/race-invites"
+    "http://localhost/api/races/quasi/race-invites"
 );
 
 let headers = {
@@ -1172,17 +1172,18 @@ fetch(url, {
 </p>
 </form>
 <h2>Create a race invite.</h2>
+<p>Will trigger a notification to be sent to the person that is being invited.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/labore/race-invites" \
+    "http://localhost/api/races/tempore/race-invites" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"contact_method_value":"ullam","contect_method_name":"sint"}'
+    -d '{"contact_method_value":"fuga","contect_method_name":"quis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/labore/race-invites"
+    "http://localhost/api/races/tempore/race-invites"
 );
 
 let headers = {
@@ -1191,8 +1192,8 @@ let headers = {
 };
 
 let body = {
-    "contact_method_value": "ullam",
-    "contect_method_name": "sint"
+    "contact_method_value": "fuga",
+    "contect_method_name": "quis"
 }
 
 fetch(url, {
@@ -1230,12 +1231,12 @@ fetch(url, {
 <b><code>contact_method_value</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contact_method_value" data-endpoint="POSTapi-races--race--race-invites" data-component="body" required  hidden>
 <br>
-</p>
+the user_id, phone number, or email of the person to invite</p>
 <p>
 <b><code>contect_method_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contect_method_name" data-endpoint="POSTapi-races--race--race-invites" data-component="body" required  hidden>
 <br>
-</p>
+the method to use to notify the user of the invite</p>
 
 </form>
 <h2>Fetch a relation resource.</h2>
@@ -1243,11 +1244,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/races/quia/race-invites/vero" \
+    -G "http://localhost/api/races/sapiente/race-invites/vel" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/quia/race-invites/vero"
+    "http://localhost/api/races/sapiente/race-invites/vel"
 );
 
 let headers = {
@@ -1297,17 +1298,18 @@ fetch(url, {
 </p>
 </form>
 <h2>Update a race invite.</h2>
+<p>Will trigger a notification to be sent to the person that is being invited.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/races/libero/race-invites/sit" \
+    "http://localhost/api/races/et/race-invites/praesentium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"contact_method_value":"assumenda","contect_method_name":"praesentium"}'
+    -d '{"contact_method_value":"nostrum","contect_method_name":"veniam"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/libero/race-invites/sit"
+    "http://localhost/api/races/et/race-invites/praesentium"
 );
 
 let headers = {
@@ -1316,8 +1318,8 @@ let headers = {
 };
 
 let body = {
-    "contact_method_value": "assumenda",
-    "contect_method_name": "praesentium"
+    "contact_method_value": "nostrum",
+    "contect_method_name": "veniam"
 }
 
 fetch(url, {
@@ -1364,12 +1366,12 @@ fetch(url, {
 <b><code>contact_method_value</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contact_method_value" data-endpoint="PUTapi-races--race--race-invites--race_invite--" data-component="body" required  hidden>
 <br>
-</p>
+the user_id, phone number, or email of the person to invite</p>
 <p>
 <b><code>contect_method_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contect_method_name" data-endpoint="PUTapi-races--race--race-invites--race_invite--" data-component="body" required  hidden>
 <br>
-</p>
+the method to use to notify the user of the invite</p>
 
 </form>
 <h2>Delete a relation resource.</h2>
@@ -1377,11 +1379,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/races/voluptatem/race-invites/ea" \
+    "http://localhost/api/races/omnis/race-invites/occaecati" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/voluptatem/race-invites/ea"
+    "http://localhost/api/races/omnis/race-invites/occaecati"
 );
 
 let headers = {
@@ -1429,11 +1431,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/numquam/race-participants/search" \
+    "http://localhost/api/races/expedita/race-participants/search" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/numquam/race-participants/search"
+    "http://localhost/api/races/expedita/race-participants/search"
 );
 
 let headers = {
@@ -1476,13 +1478,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/totam/race-participants/batch" \
+    "http://localhost/api/races/rerum/race-participants/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["molestias"]}'
+    -d '{"resources":["consectetur"]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/totam/race-participants/batch"
+    "http://localhost/api/races/rerum/race-participants/batch"
 );
 
 let headers = {
@@ -1492,7 +1494,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "molestias"
+        "consectetur"
     ]
 }
 
@@ -1543,7 +1545,7 @@ fetch(url, {
     "http://localhost/api/races/et/race-participants/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["rerum"]}'
+    -d '{"resources":["et"]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/races/et/race-participants/batch"
@@ -1556,7 +1558,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "rerum"
+        "et"
     ]
 }
 
@@ -1604,11 +1606,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/races/eaque/race-participants/batch" \
+    "http://localhost/api/races/cupiditate/race-participants/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/eaque/race-participants/batch"
+    "http://localhost/api/races/cupiditate/race-participants/batch"
 );
 
 let headers = {
@@ -1651,13 +1653,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/ipsum/race-participants/associate" \
+    "http://localhost/api/races/beatae/race-participants/associate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"related_key":"facere"}'
+    -d '{"related_key":"aut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/ipsum/race-participants/associate"
+    "http://localhost/api/races/beatae/race-participants/associate"
 );
 
 let headers = {
@@ -1666,7 +1668,7 @@ let headers = {
 };
 
 let body = {
-    "related_key": "facere"
+    "related_key": "aut"
 }
 
 fetch(url, {
@@ -1712,11 +1714,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/races/sequi/race-participants/nostrum/dissociate" \
+    "http://localhost/api/races/ex/race-participants/facilis/dissociate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/sequi/race-participants/nostrum/dissociate"
+    "http://localhost/api/races/ex/race-participants/facilis/dissociate"
 );
 
 let headers = {
@@ -1764,11 +1766,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/races/doloribus/race-participants" \
+    -G "http://localhost/api/races/aperiam/race-participants" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/doloribus/race-participants"
+    "http://localhost/api/races/aperiam/race-participants"
 );
 
 let headers = {
@@ -1817,13 +1819,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/races/rerum/race-participants" \
+    "http://localhost/api/races/optio/race-participants" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":418036.188028968,"inviter_id":8.382}'
+    -d '{"user_id":3132.011555,"inviter_id":65344.0004331}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/rerum/race-participants"
+    "http://localhost/api/races/optio/race-participants"
 );
 
 let headers = {
@@ -1832,8 +1834,8 @@ let headers = {
 };
 
 let body = {
-    "user_id": 418036.188028968,
-    "inviter_id": 8.382
+    "user_id": 3132.011555,
+    "inviter_id": 65344.0004331
 }
 
 fetch(url, {
@@ -1884,11 +1886,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/races/maiores/race-participants/vel" \
+    -G "http://localhost/api/races/eos/race-participants/ducimus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/maiores/race-participants/vel"
+    "http://localhost/api/races/eos/race-participants/ducimus"
 );
 
 let headers = {
@@ -1942,13 +1944,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/races/commodi/race-participants/velit" \
+    "http://localhost/api/races/qui/race-participants/esse" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":62485.23,"inviter_id":89188}'
+    -d '{"user_id":46.66502,"inviter_id":36.29}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/commodi/race-participants/velit"
+    "http://localhost/api/races/qui/race-participants/esse"
 );
 
 let headers = {
@@ -1957,8 +1959,8 @@ let headers = {
 };
 
 let body = {
-    "user_id": 62485.23,
-    "inviter_id": 89188
+    "user_id": 46.66502,
+    "inviter_id": 36.29
 }
 
 fetch(url, {
@@ -2018,11 +2020,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/races/rerum/race-participants/qui" \
+    "http://localhost/api/races/expedita/race-participants/vel" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/races/rerum/race-participants/qui"
+    "http://localhost/api/races/expedita/race-participants/vel"
 );
 
 let headers = {
@@ -2062,6 +2064,473 @@ fetch(url, {
 <p>
 <b><code>race_participant</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="race_participant" data-endpoint="DELETEapi-races--race--race-participants--race_participant--" data-component="url"  hidden>
+<br>
+</p>
+</form><h1>Social</h1>
+<h2>Fetches the list of resources.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/user-friends/search" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends/search"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-user-friends-search" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-user-friends-search"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-friends-search"></code></pre>
+</div>
+<div id="execution-error-POSTapi-user-friends-search" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-friends-search"></code></pre>
+</div>
+<form id="form-POSTapi-user-friends-search" data-method="POST" data-path="api/user-friends/search" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-friends-search', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-user-friends-search" onclick="tryItOut('POSTapi-user-friends-search');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-user-friends-search" onclick="cancelTryOut('POSTapi-user-friends-search');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-user-friends-search" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/user-friends/search</code></b>
+</p>
+</form>
+<h2>Creates a batch of new resources.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/user-friends/batch" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"resources":["incidunt"]}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends/batch"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "resources": [
+        "incidunt"
+    ]
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-user-friends-batch" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-user-friends-batch"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-friends-batch"></code></pre>
+</div>
+<div id="execution-error-POSTapi-user-friends-batch" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-friends-batch"></code></pre>
+</div>
+<form id="form-POSTapi-user-friends-batch" data-method="POST" data-path="api/user-friends/batch" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-friends-batch', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-user-friends-batch" onclick="tryItOut('POSTapi-user-friends-batch');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-user-friends-batch" onclick="cancelTryOut('POSTapi-user-friends-batch');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-user-friends-batch" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/user-friends/batch</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>resources</code></b>&nbsp;&nbsp;<small>string[]</small>  &nbsp;
+<input type="text" name="resources.0" data-endpoint="POSTapi-user-friends-batch" data-component="body" required  hidden>
+<input type="text" name="resources.1" data-endpoint="POSTapi-user-friends-batch" data-component="body" hidden>
+<br>
+</p>
+
+</form>
+<h2>Update a batch of resources.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PATCH \
+    "http://localhost/api/user-friends/batch" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"resources":["omnis"]}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends/batch"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "resources": [
+        "omnis"
+    ]
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-PATCHapi-user-friends-batch" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCHapi-user-friends-batch"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-user-friends-batch"></code></pre>
+</div>
+<div id="execution-error-PATCHapi-user-friends-batch" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-user-friends-batch"></code></pre>
+</div>
+<form id="form-PATCHapi-user-friends-batch" data-method="PATCH" data-path="api/user-friends/batch" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PATCHapi-user-friends-batch', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PATCHapi-user-friends-batch" onclick="tryItOut('PATCHapi-user-friends-batch');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PATCHapi-user-friends-batch" onclick="cancelTryOut('PATCHapi-user-friends-batch');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PATCHapi-user-friends-batch" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-purple">PATCH</small>
+ <b><code>api/user-friends/batch</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>resources</code></b>&nbsp;&nbsp;<small>string[]</small>  &nbsp;
+<input type="text" name="resources.0" data-endpoint="PATCHapi-user-friends-batch" data-component="body" required  hidden>
+<input type="text" name="resources.1" data-endpoint="PATCHapi-user-friends-batch" data-component="body" hidden>
+<br>
+</p>
+
+</form>
+<h2>Deletes a batch of resources.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/user-friends/batch" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends/batch"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-DELETEapi-user-friends-batch" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-user-friends-batch"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-user-friends-batch"></code></pre>
+</div>
+<div id="execution-error-DELETEapi-user-friends-batch" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-user-friends-batch"></code></pre>
+</div>
+<form id="form-DELETEapi-user-friends-batch" data-method="DELETE" data-path="api/user-friends/batch" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user-friends-batch', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-user-friends-batch" onclick="tryItOut('DELETEapi-user-friends-batch');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-user-friends-batch" onclick="cancelTryOut('DELETEapi-user-friends-batch');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-user-friends-batch" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>api/user-friends/batch</code></b>
+</p>
+</form>
+<h2>Fetches the list of resources.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/user-friends" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<div id="execution-results-GETapi-user-friends" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-user-friends"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-friends"></code></pre>
+</div>
+<div id="execution-error-GETapi-user-friends" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-friends"></code></pre>
+</div>
+<form id="form-GETapi-user-friends" data-method="GET" data-path="api/user-friends" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-user-friends', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-user-friends" onclick="tryItOut('GETapi-user-friends');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-user-friends" onclick="cancelTryOut('GETapi-user-friends');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-user-friends" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/user-friends</code></b>
+</p>
+</form>
+<h2>Create a friend request.</h2>
+<p>Request another user to be a friend. Will send a notification to the user being invited.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/user-friends" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"invitee_id":6}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "invitee_id": 6
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-user-friends" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-user-friends"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-friends"></code></pre>
+</div>
+<div id="execution-error-POSTapi-user-friends" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-friends"></code></pre>
+</div>
+<form id="form-POSTapi-user-friends" data-method="POST" data-path="api/user-friends" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-friends', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-user-friends" onclick="tryItOut('POSTapi-user-friends');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-user-friends" onclick="cancelTryOut('POSTapi-user-friends');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-user-friends" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/user-friends</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>invitee_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="invitee_id" data-endpoint="POSTapi-user-friends" data-component="body" required  hidden>
+<br>
+the id of the user to invite as a friend</p>
+
+</form>
+<h2>Fetches resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/user-friends/non" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends/non"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<div id="execution-results-GETapi-user-friends--user_friend-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-user-friends--user_friend-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-friends--user_friend-"></code></pre>
+</div>
+<div id="execution-error-GETapi-user-friends--user_friend-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-friends--user_friend-"></code></pre>
+</div>
+<form id="form-GETapi-user-friends--user_friend-" data-method="GET" data-path="api/user-friends/{user_friend}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-user-friends--user_friend-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-user-friends--user_friend-" onclick="tryItOut('GETapi-user-friends--user_friend-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-user-friends--user_friend-" onclick="cancelTryOut('GETapi-user-friends--user_friend-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-user-friends--user_friend-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/user-friends/{user_friend}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>user_friend</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="user_friend" data-endpoint="GETapi-user-friends--user_friend-" data-component="url" required  hidden>
+<br>
+</p>
+</form>
+<h2>Update a friend request.</h2>
+<p>Accept or remove the request.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/user-friends/exercitationem" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"status":"id"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends/exercitationem"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "status": "id"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-PUTapi-user-friends--user_friend-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-user-friends--user_friend-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-user-friends--user_friend-"></code></pre>
+</div>
+<div id="execution-error-PUTapi-user-friends--user_friend-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-user-friends--user_friend-"></code></pre>
+</div>
+<form id="form-PUTapi-user-friends--user_friend-" data-method="PUT" data-path="api/user-friends/{user_friend}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-user-friends--user_friend-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-user-friends--user_friend-" onclick="tryItOut('PUTapi-user-friends--user_friend-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-user-friends--user_friend-" onclick="cancelTryOut('PUTapi-user-friends--user_friend-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-user-friends--user_friend-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/user-friends/{user_friend}</code></b>
+</p>
+<p>
+<small class="badge badge-purple">PATCH</small>
+ <b><code>api/user-friends/{user_friend}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>user_friend</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="user_friend" data-endpoint="PUTapi-user-friends--user_friend-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>status</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="status" data-endpoint="PUTapi-user-friends--user_friend-" data-component="body" required  hidden>
+<br>
+can be updated to "accepted" or "declined"</p>
+
+</form>
+<h2>Deletes a resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/user-friends/nihil" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user-friends/nihil"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-DELETEapi-user-friends--user_friend-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-user-friends--user_friend-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-user-friends--user_friend-"></code></pre>
+</div>
+<div id="execution-error-DELETEapi-user-friends--user_friend-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-user-friends--user_friend-"></code></pre>
+</div>
+<form id="form-DELETEapi-user-friends--user_friend-" data-method="DELETE" data-path="api/user-friends/{user_friend}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user-friends--user_friend-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-user-friends--user_friend-" onclick="tryItOut('DELETEapi-user-friends--user_friend-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-user-friends--user_friend-" onclick="cancelTryOut('DELETEapi-user-friends--user_friend-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-user-friends--user_friend-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>api/user-friends/{user_friend}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>user_friend</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="user_friend" data-endpoint="DELETEapi-user-friends--user_friend-" data-component="url" required  hidden>
 <br>
 </p>
 </form>

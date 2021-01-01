@@ -10,14 +10,14 @@
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/deleniti/race-invites/search" \
+    "http://localhost/api/races/iusto/race-invites/search" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/deleniti/race-invites/search"
+    "http://localhost/api/races/iusto/race-invites/search"
 );
 
 let headers = {
@@ -70,16 +70,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/voluptatibus/race-invites/batch" \
+    "http://localhost/api/races/quo/race-invites/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["voluptate"]}'
+    -d '{"resources":["itaque"]}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/voluptatibus/race-invites/batch"
+    "http://localhost/api/races/quo/race-invites/batch"
 );
 
 let headers = {
@@ -89,7 +89,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "voluptate"
+        "itaque"
     ]
 }
 
@@ -146,16 +146,16 @@ fetch(url, {
 
 ```bash
 curl -X PATCH \
-    "http://localhost/api/races/qui/race-invites/batch" \
+    "http://localhost/api/races/non/race-invites/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["suscipit"]}'
+    -d '{"resources":["pariatur"]}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/qui/race-invites/batch"
+    "http://localhost/api/races/non/race-invites/batch"
 );
 
 let headers = {
@@ -165,7 +165,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "suscipit"
+        "pariatur"
     ]
 }
 
@@ -222,14 +222,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/races/culpa/race-invites/batch" \
+    "http://localhost/api/races/consequatur/race-invites/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/culpa/race-invites/batch"
+    "http://localhost/api/races/consequatur/race-invites/batch"
 );
 
 let headers = {
@@ -282,16 +282,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/dolores/race-invites/associate" \
+    "http://localhost/api/races/vel/race-invites/associate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"related_key":"aut"}'
+    -d '{"related_key":"eius"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/dolores/race-invites/associate"
+    "http://localhost/api/races/vel/race-invites/associate"
 );
 
 let headers = {
@@ -300,7 +300,7 @@ let headers = {
 };
 
 let body = {
-    "related_key": "aut"
+    "related_key": "eius"
 }
 
 fetch(url, {
@@ -355,14 +355,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/races/amet/race-invites/nostrum/dissociate" \
+    "http://localhost/api/races/sed/race-invites/facere/dissociate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/amet/race-invites/nostrum/dissociate"
+    "http://localhost/api/races/sed/race-invites/facere/dissociate"
 );
 
 let headers = {
@@ -420,14 +420,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/races/culpa/race-invites" \
+    -G "http://localhost/api/races/quasi/race-invites" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/culpa/race-invites"
+    "http://localhost/api/races/quasi/race-invites"
 );
 
 let headers = {
@@ -481,22 +481,22 @@ fetch(url, {
 ## Create a race invite.
 
 
-
+Will trigger a notification to be sent to the person that is being invited.
 
 > Example request:
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/labore/race-invites" \
+    "http://localhost/api/races/tempore/race-invites" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"contact_method_value":"ullam","contect_method_name":"sint"}'
+    -d '{"contact_method_value":"fuga","contect_method_name":"quis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/labore/race-invites"
+    "http://localhost/api/races/tempore/race-invites"
 );
 
 let headers = {
@@ -505,8 +505,8 @@ let headers = {
 };
 
 let body = {
-    "contact_method_value": "ullam",
-    "contect_method_name": "sint"
+    "contact_method_value": "fuga",
+    "contect_method_name": "quis"
 }
 
 fetch(url, {
@@ -547,12 +547,12 @@ fetch(url, {
 <b><code>contact_method_value</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contact_method_value" data-endpoint="POSTapi-races--race--race-invites" data-component="body" required  hidden>
 <br>
-</p>
+the user_id, phone number, or email of the person to invite</p>
 <p>
 <b><code>contect_method_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contect_method_name" data-endpoint="POSTapi-races--race--race-invites" data-component="body" required  hidden>
 <br>
-</p>
+the method to use to notify the user of the invite</p>
 
 </form>
 
@@ -566,14 +566,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/races/quia/race-invites/vero" \
+    -G "http://localhost/api/races/sapiente/race-invites/vel" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/quia/race-invites/vero"
+    "http://localhost/api/races/sapiente/race-invites/vel"
 );
 
 let headers = {
@@ -632,22 +632,22 @@ fetch(url, {
 ## Update a race invite.
 
 
-
+Will trigger a notification to be sent to the person that is being invited.
 
 > Example request:
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/races/libero/race-invites/sit" \
+    "http://localhost/api/races/et/race-invites/praesentium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"contact_method_value":"assumenda","contect_method_name":"praesentium"}'
+    -d '{"contact_method_value":"nostrum","contect_method_name":"veniam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/libero/race-invites/sit"
+    "http://localhost/api/races/et/race-invites/praesentium"
 );
 
 let headers = {
@@ -656,8 +656,8 @@ let headers = {
 };
 
 let body = {
-    "contact_method_value": "assumenda",
-    "contect_method_name": "praesentium"
+    "contact_method_value": "nostrum",
+    "contect_method_name": "veniam"
 }
 
 fetch(url, {
@@ -707,12 +707,12 @@ fetch(url, {
 <b><code>contact_method_value</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contact_method_value" data-endpoint="PUTapi-races--race--race-invites--race_invite--" data-component="body" required  hidden>
 <br>
-</p>
+the user_id, phone number, or email of the person to invite</p>
 <p>
 <b><code>contect_method_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="contect_method_name" data-endpoint="PUTapi-races--race--race-invites--race_invite--" data-component="body" required  hidden>
 <br>
-</p>
+the method to use to notify the user of the invite</p>
 
 </form>
 
@@ -726,14 +726,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/races/voluptatem/race-invites/ea" \
+    "http://localhost/api/races/omnis/race-invites/occaecati" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/voluptatem/race-invites/ea"
+    "http://localhost/api/races/omnis/race-invites/occaecati"
 );
 
 let headers = {
