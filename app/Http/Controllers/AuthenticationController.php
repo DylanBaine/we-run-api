@@ -16,8 +16,8 @@ class AuthenticationController extends Controller
             'password' => 'required|min:10',
         ]);
         $user = User::registerAndLogIn($data['name'], $data['email'], $data['password']);
-        $response =  array_merge($user->toArray(), [
-            'token' => $user->plainTextToken,
+        $response = array_merge($user->toArray(), [
+            'token' => $user->currentAccessToken()->plainTextToken
         ]);
         return $response;
     }
@@ -42,5 +42,10 @@ class AuthenticationController extends Controller
             Auth::login($user);
             return $user->withAccessToken('auth');
         }
+    }
+
+    public function deleteTokens(Request $request)
+    {
+        $request->user()->tokens()->delete();
     }
 }

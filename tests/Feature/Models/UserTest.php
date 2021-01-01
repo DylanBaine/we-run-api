@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Models;
 
 use App\Jobs\SendInviteToRecipient;
 use App\Models\Race;
@@ -14,6 +14,12 @@ class UserTest extends TestCase
 {
 
     use RefreshDatabase;
+
+    public function test_registerAndLogIn()
+    {
+        $user = User::registerAndLogIn('test guy', 'test@test.com', 'supser_secret');
+        $this->assertNotNull($user->currentAccessToken()->plainTextToken);
+    }
 
     public function test_races()
     {

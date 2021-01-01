@@ -5,23 +5,25 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Laravel\Sanctum\NewAccessToken;
 use Tests\TestCase;
 
-class AuthorizationTest extends TestCase
+class a extends TestCase
 {
     use RefreshDatabase;
 
     public function test_registering()
     {
-        $this->post('/api/register', [
+        $response = $this->post('/api/register', [
             'name' => 'Test',
             'email' => 'test@test.com',
             'password' => 'test12345asdf',
-        ])->assertSuccessful()
-        ->assertJsonFragment([
+        ]);
+        $response->assertSuccessful();
+        $response->assertJsonFragment([
             'name' => 'Test',
-            'email' => 'test@test.com'
-        ])->assertSee('token');
+            'email' => 'test@test.com',
+        ]);
     }
 
     public function test_getting_user_info()
@@ -44,5 +46,16 @@ class AuthorizationTest extends TestCase
         ])
         ->assertSuccessful()
         ->assertJsonFragment($user->toArray());
+    }
+
+    public function test_removing_tokens()
+    {
+        $user = User::factory()->create();
+        $user->createToken('test');
+
+        $this->actingAs($user)
+            ->delete('/api/tokens');
+
+        $this->assertTrue($user->tokens->isEmpty());
     }
 }
