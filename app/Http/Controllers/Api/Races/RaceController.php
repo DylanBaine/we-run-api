@@ -32,7 +32,7 @@ class RaceController extends Controller
 
     public function buildIndexFetchQuery(Request $request, array $requestedRelations): Builder
     {
-        return $request->user()->races();
+        return $request->user()->races()->with($requestedRelations);
     }
 
     /**

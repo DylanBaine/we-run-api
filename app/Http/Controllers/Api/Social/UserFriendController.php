@@ -18,7 +18,6 @@ class UserFriendController extends Controller
 
     protected $request = UserFriendRequest::class;
 
-
     /**
      * @inheritDoc
      *
@@ -33,7 +32,7 @@ class UserFriendController extends Controller
 
     public function buildIndexFetchQuery(Request $request, array $requestedRelations): Builder
     {
-        return $request->user()->friends();
+        return $request->user()->friends()->with($requestedRelations);
     }
 
     /**
