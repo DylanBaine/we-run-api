@@ -18,7 +18,7 @@ class RaceInvitePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -28,9 +28,9 @@ class RaceInvitePolicy
      * @param  \App\Models\Races\RaceInvite  $raceInvite
      * @return mixed
      */
-    public function view(User $user, RaceInvite $raceInvite)
+    public function view(?User $user, RaceInvite $raceInvite)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class RaceInvitePolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class RaceInvitePolicy
      */
     public function update(User $user, RaceInvite $raceInvite)
     {
-        //
+        return $user->id == $raceInvite->inviter_id;
     }
 
     /**
@@ -65,7 +65,7 @@ class RaceInvitePolicy
      */
     public function delete(User $user, RaceInvite $raceInvite)
     {
-        //
+        return $user->id == $raceInvite->inviter_id;
     }
 
     /**
@@ -77,7 +77,7 @@ class RaceInvitePolicy
      */
     public function restore(User $user, RaceInvite $raceInvite)
     {
-        //
+        return $user->id == $raceInvite->inviter_id;
     }
 
     /**
@@ -89,6 +89,6 @@ class RaceInvitePolicy
      */
     public function forceDelete(User $user, RaceInvite $raceInvite)
     {
-        //
+        return $user->id == $raceInvite->inviter_id;
     }
 }

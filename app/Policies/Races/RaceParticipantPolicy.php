@@ -18,7 +18,7 @@ class RaceParticipantPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +30,10 @@ class RaceParticipantPolicy
      */
     public function view(User $user, RaceParticipant $raceParticipant)
     {
-        //
+        return in_array($user->id, [
+            $raceParticipant->user_id,
+            $raceParticipant->inviter_id
+        ]);
     }
 
     /**
@@ -41,7 +44,7 @@ class RaceParticipantPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +56,10 @@ class RaceParticipantPolicy
      */
     public function update(User $user, RaceParticipant $raceParticipant)
     {
-        //
+        return in_array($user->id, [
+            $raceParticipant->user_id,
+            $raceParticipant->inviter_id
+        ]);
     }
 
     /**
@@ -65,7 +71,10 @@ class RaceParticipantPolicy
      */
     public function delete(User $user, RaceParticipant $raceParticipant)
     {
-        //
+        return in_array($user->id, [
+            $raceParticipant->user_id,
+            $raceParticipant->inviter_id
+        ]);
     }
 
     /**
@@ -77,7 +86,10 @@ class RaceParticipantPolicy
      */
     public function restore(User $user, RaceParticipant $raceParticipant)
     {
-        //
+        return in_array($user->id, [
+            $raceParticipant->user_id,
+            $raceParticipant->inviter_id
+        ]);
     }
 
     /**
@@ -89,6 +101,9 @@ class RaceParticipantPolicy
      */
     public function forceDelete(User $user, RaceParticipant $raceParticipant)
     {
-        //
+        return in_array($user->id, [
+            $raceParticipant->user_id,
+            $raceParticipant->inviter_id
+        ]);
     }
 }
