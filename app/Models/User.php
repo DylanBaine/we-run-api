@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Races\Race;
+use App\Models\Races\RaceInvite;
+use App\Models\Social\UserFriend;
 use Laravel\Sanctum\HasApiTokens;
 use App\Jobs\SendInviteToRecipient;
-use App\Models\Social\UserFriend;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;

@@ -10,14 +10,14 @@
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/expedita/race-participants/search" \
+    "http://localhost/api/races/dicta/race-participants/search" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/expedita/race-participants/search"
+    "http://localhost/api/races/dicta/race-participants/search"
 );
 
 let headers = {
@@ -70,16 +70,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/rerum/race-participants/batch" \
+    "http://localhost/api/races/aspernatur/race-participants/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["consectetur"]}'
+    -d '{"resources":["dolor"]}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/rerum/race-participants/batch"
+    "http://localhost/api/races/aspernatur/race-participants/batch"
 );
 
 let headers = {
@@ -89,7 +89,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "consectetur"
+        "dolor"
     ]
 }
 
@@ -146,16 +146,16 @@ fetch(url, {
 
 ```bash
 curl -X PATCH \
-    "http://localhost/api/races/et/race-participants/batch" \
+    "http://localhost/api/races/itaque/race-participants/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["et"]}'
+    -d '{"resources":["aperiam"]}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/et/race-participants/batch"
+    "http://localhost/api/races/itaque/race-participants/batch"
 );
 
 let headers = {
@@ -165,7 +165,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "et"
+        "aperiam"
     ]
 }
 
@@ -222,14 +222,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/races/cupiditate/race-participants/batch" \
+    "http://localhost/api/races/culpa/race-participants/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/cupiditate/race-participants/batch"
+    "http://localhost/api/races/culpa/race-participants/batch"
 );
 
 let headers = {
@@ -282,16 +282,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/beatae/race-participants/associate" \
+    "http://localhost/api/races/blanditiis/race-participants/associate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"related_key":"aut"}'
+    -d '{"related_key":"dignissimos"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/beatae/race-participants/associate"
+    "http://localhost/api/races/blanditiis/race-participants/associate"
 );
 
 let headers = {
@@ -300,7 +300,7 @@ let headers = {
 };
 
 let body = {
-    "related_key": "aut"
+    "related_key": "dignissimos"
 }
 
 fetch(url, {
@@ -355,14 +355,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/races/ex/race-participants/facilis/dissociate" \
+    "http://localhost/api/races/modi/race-participants/vitae/dissociate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/ex/race-participants/facilis/dissociate"
+    "http://localhost/api/races/modi/race-participants/vitae/dissociate"
 );
 
 let headers = {
@@ -420,14 +420,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/races/aperiam/race-participants" \
+    -G "http://localhost/api/races/enim/race-participants" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/aperiam/race-participants"
+    "http://localhost/api/races/enim/race-participants"
 );
 
 let headers = {
@@ -487,16 +487,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/api/races/optio/race-participants" \
+    "http://localhost/api/races/quas/race-participants" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":3132.011555,"inviter_id":65344.0004331}'
+    -d '{"user_id":267.9130912,"inviter_id":97.4988564}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/optio/race-participants"
+    "http://localhost/api/races/quas/race-participants"
 );
 
 let headers = {
@@ -505,8 +505,8 @@ let headers = {
 };
 
 let body = {
-    "user_id": 3132.011555,
-    "inviter_id": 65344.0004331
+    "user_id": 267.9130912,
+    "inviter_id": 97.4988564
 }
 
 fetch(url, {
@@ -549,8 +549,8 @@ fetch(url, {
 <br>
 </p>
 <p>
-<b><code>inviter_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
-<input type="number" name="inviter_id" data-endpoint="POSTapi-races--race--race-participants" data-component="body" required  hidden>
+<b><code>inviter_id</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+<input type="number" name="inviter_id" data-endpoint="POSTapi-races--race--race-participants" data-component="body"  hidden>
 <br>
 </p>
 
@@ -566,14 +566,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/races/eos/race-participants/ducimus" \
+    -G "http://localhost/api/races/voluptatum/race-participants/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/eos/race-participants/ducimus"
+    "http://localhost/api/races/voluptatum/race-participants/aut"
 );
 
 let headers = {
@@ -638,16 +638,16 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/races/qui/race-participants/esse" \
+    "http://localhost/api/races/ut/race-participants/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":46.66502,"inviter_id":36.29}'
+    -d '{"user_id":0.200246882,"inviter_id":8.3880851}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/qui/race-participants/esse"
+    "http://localhost/api/races/ut/race-participants/et"
 );
 
 let headers = {
@@ -656,8 +656,8 @@ let headers = {
 };
 
 let body = {
-    "user_id": 46.66502,
-    "inviter_id": 36.29
+    "user_id": 0.200246882,
+    "inviter_id": 8.3880851
 }
 
 fetch(url, {
@@ -709,8 +709,8 @@ fetch(url, {
 <br>
 </p>
 <p>
-<b><code>inviter_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
-<input type="number" name="inviter_id" data-endpoint="PUTapi-races--race--race-participants--race_participant--" data-component="body" required  hidden>
+<b><code>inviter_id</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+<input type="number" name="inviter_id" data-endpoint="PUTapi-races--race--race-participants--race_participant--" data-component="body"  hidden>
 <br>
 </p>
 
@@ -726,14 +726,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/races/expedita/race-participants/vel" \
+    "http://localhost/api/races/quae/race-participants/voluptas" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/expedita/race-participants/vel"
+    "http://localhost/api/races/quae/race-participants/voluptas"
 );
 
 let headers = {

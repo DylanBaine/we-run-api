@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Race;
-use App\Models\RaceParticipant;
+use App\Models\Races\Race;
+use App\Models\Races\RaceParticipant;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

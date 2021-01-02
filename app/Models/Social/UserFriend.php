@@ -2,9 +2,10 @@
 
 namespace App\Models\Social;
 
+use App\Models\User;
 use App\Jobs\SendFriendInvite;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class UserFriend extends Model
 {
@@ -23,9 +24,6 @@ class UserFriend extends Model
     protected static function booting()
     {
         static::creating(function(self $userFriend) {
-            if (auth()->check()) {
-                $userFriend->invitor_id = auth()->id();
-            }
             $userFriend->status = static::STATUS_PENDING;
         });
 

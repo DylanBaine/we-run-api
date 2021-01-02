@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Api\Races;
 
-use App\Models\Race;
+use App\Http\Requests\Races\RaceParticipantRequest;
+use App\Models\Races\Race;
 use Orion\Http\Requests\Request;
 use Orion\Http\Controllers\RelationController;
 
@@ -15,11 +16,13 @@ class RaceParticipantController extends RelationController
 
     protected $relation = 'participants';
 
+    protected $request = RaceParticipantRequest::class;
+
     /**
      * Create a race participant.
      *
      * @bodyParam user_id number required
-     * @bodyParam inviter_id number required
+     * @bodyParam inviter_id number
      */
     public function store(Request $request, $parentKey)
     {
@@ -30,7 +33,7 @@ class RaceParticipantController extends RelationController
      * Update a race participant.
      *
      * @bodyParam user_id number required
-     * @bodyParam inviter_id number required
+     * @bodyParam inviter_id number
      */
     public function update(Request $request, $parentKey, $relatedKey = null)
     {

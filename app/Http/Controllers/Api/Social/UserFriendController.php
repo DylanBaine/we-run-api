@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api\Social;
 
+use App\Http\Requests\Social\UserFriendRequest;
 use Orion\Http\Requests\Request;
 use App\Models\Social\UserFriend;
 use Orion\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
@@ -12,7 +14,22 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class UserFriendController extends Controller
 {
-    public $model = UserFriend::class;
+    protected $model = UserFriend::class;
+
+    protected $request = UserFriendRequest::class;
+
+
+    /**
+     * @inheritDoc
+     *
+     * @param Request $request
+     * @param UserFriend $userFriend
+     * @return void
+     */
+    protected function beforeSave(Request $request, Model $userFriend)
+    {
+        $userFriend->invitor()->associate($request->user());
+    }
 
     public function buildIndexFetchQuery(Request $request, array $requestedRelations): Builder
     {

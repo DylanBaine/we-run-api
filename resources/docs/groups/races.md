@@ -67,7 +67,7 @@ curl -X POST \
     "http://localhost/api/races/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["similique"]}'
+    -d '{"resources":["voluptatum"]}'
 
 ```
 
@@ -83,7 +83,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "similique"
+        "voluptatum"
     ]
 }
 
@@ -137,7 +137,7 @@ curl -X PATCH \
     "http://localhost/api/races/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["sit"]}'
+    -d '{"resources":["ex"]}'
 
 ```
 
@@ -153,7 +153,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "sit"
+        "ex"
     ]
 }
 
@@ -322,7 +322,7 @@ curl -X POST \
     "http://localhost/api/races" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"ut","description":"eveniet","start_time":"qui","distance_units":"at"}'
+    -d '{"name":"corporis","description":"officiis","start_time":"quisquam","distance_number":371124.2876,"distance_units":"provident"}'
 
 ```
 
@@ -337,10 +337,11 @@ let headers = {
 };
 
 let body = {
-    "name": "ut",
-    "description": "eveniet",
-    "start_time": "qui",
-    "distance_units": "at"
+    "name": "corporis",
+    "description": "officiis",
+    "start_time": "quisquam",
+    "distance_number": 371124.2876,
+    "distance_units": "provident"
 }
 
 fetch(url, {
@@ -387,6 +388,11 @@ fetch(url, {
 <br>
 </p>
 <p>
+<b><code>distance_number</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+<input type="number" name="distance_number" data-endpoint="POSTapi-races" data-component="body" required  hidden>
+<br>
+</p>
+<p>
 <b><code>distance_units</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="distance_units" data-endpoint="POSTapi-races" data-component="body" required  hidden>
 <br>
@@ -404,14 +410,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/races/hic" \
+    -G "http://localhost/api/races/quod" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/hic"
+    "http://localhost/api/races/quod"
 );
 
 let headers = {
@@ -471,16 +477,16 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/races/animi" \
+    "http://localhost/api/races/quis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"animi","description":"dolores","start_time":"eum","distance_units":"qui"}'
+    -d '{"name":"inventore","description":"quia","start_time":"natus","distance_number":577.65,"distance_units":"natus"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/animi"
+    "http://localhost/api/races/quis"
 );
 
 let headers = {
@@ -489,10 +495,11 @@ let headers = {
 };
 
 let body = {
-    "name": "animi",
-    "description": "dolores",
-    "start_time": "eum",
-    "distance_units": "qui"
+    "name": "inventore",
+    "description": "quia",
+    "start_time": "natus",
+    "distance_number": 577.65,
+    "distance_units": "natus"
 }
 
 fetch(url, {
@@ -549,6 +556,11 @@ fetch(url, {
 <br>
 </p>
 <p>
+<b><code>distance_number</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+<input type="number" name="distance_number" data-endpoint="PUTapi-races--race-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
 <b><code>distance_units</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="distance_units" data-endpoint="PUTapi-races--race-" data-component="body" required  hidden>
 <br>
@@ -566,14 +578,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/races/ex" \
+    "http://localhost/api/races/asperiores" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/races/ex"
+    "http://localhost/api/races/asperiores"
 );
 
 let headers = {

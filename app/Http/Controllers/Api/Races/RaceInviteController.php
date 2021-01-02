@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api\Races;
 
-use App\Models\Race;
+use App\Http\Requests\Races\RaceInviteRequest;
+use App\Models\Races\Race;
+use App\Models\Races\RaceInvite;
 use Orion\Http\Requests\Request;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Orion\Http\Controllers\RelationController;
 
 /**
@@ -12,16 +14,31 @@ use Orion\Http\Controllers\RelationController;
  */
 class RaceInviteController extends RelationController
 {
+
     protected $model = Race::class;
 
     protected $relation = 'invites';
+
+    protected $request = RaceInviteRequest::class;
+
+    /**
+     * @inheritDoc
+     *
+     * @param Request $request
+     * @param RaceInvite $raceInvite
+     * @return void
+     */
+    protected function beforeSave(Request $request, Model $raceInvite)
+    {
+        $raceInvite->inviter()->associate($request->user());
+    }
 
     /**
      * Create a race invite.
      * Will trigger a notification to be sent to the person that is being invited.
      *
      * @bodyParam contact_method_value string required the user_id, phone number, or email of the person to invite
-     * @bodyParam contect_method_name string required the method to use to notify the user of the invite
+     * @bodyParam contact_method_name string required the method to use to notify the user of the invite
      */
     public function store(Request $request, $parentKey)
     {
@@ -33,7 +50,7 @@ class RaceInviteController extends RelationController
      * Will trigger a notification to be sent to the person that is being invited.
      *
      * @bodyParam contact_method_value string required the user_id, phone number, or email of the person to invite
-     * @bodyParam contect_method_name string required the method to use to notify the user of the invite
+     * @bodyParam contact_method_name string required the method to use to notify the user of the invite
      */
     public function update(Request $request, $parentKey, $relatedKey = null)
     {

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Races;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use App\Jobs\SendInviteToRecipient;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RaceInvite extends Model
 {
+
+    const METHOD_PHONE = 'phone';
+    const METHOD_EMAIL = 'email';
+    const METHOD_USER_ID = 'user_id';
+    
     use HasFactory;
 
     protected $fillable = [
