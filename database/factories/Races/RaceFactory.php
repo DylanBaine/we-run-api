@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Races;
 
 use App\Models\Races\Race;
 use App\Models\User;
@@ -23,6 +23,8 @@ class RaceFactory extends Factory
     public function definition()
     {
         return [
+            'name' => $this->faker->name,
+            'description' => $this->faker->sentence,
             'created_by_id' => User::factory()->create()->id,
             'start_time' => $this->faker->time(),
             'distance_number' => $this->faker->numberBetween(3, 26),
