@@ -27,7 +27,7 @@ class UserFriendController extends Controller
      */
     protected function beforeSave(Request $request, Model $userFriend)
     {
-        $userFriend->invitor()->associate($request->user());
+        $userFriend->inviter()->associate($request->user());
     }
 
     public function buildIndexFetchQuery(Request $request, array $requestedRelations): Builder

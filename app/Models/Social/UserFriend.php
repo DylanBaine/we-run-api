@@ -17,7 +17,7 @@ class UserFriend extends Model
 
     protected $fillable = [
         'invitee_id',
-        'invitor_id',
+        'inviter_id',
         'status',
     ];
 
@@ -37,7 +37,7 @@ class UserFriend extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function invitor()
+    public function inviter()
     {
         return $this->belongsTo(User::class);
     }

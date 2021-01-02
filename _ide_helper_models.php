@@ -58,7 +58,7 @@ namespace App\Models\Social{
  * App\Models\Social\UserFriend
  *
  * @property-read \App\Models\User $invitee
- * @property-read \App\Models\User $invitor
+ * @property-read \App\Models\User $inviter
  * @method static \Illuminate\Database\Eloquent\Builder|UserFriend newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|UserFriend newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|UserFriend query()
