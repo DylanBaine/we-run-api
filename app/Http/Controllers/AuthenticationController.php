@@ -19,6 +19,8 @@ class AuthenticationController extends Controller
      * @bodyParam email string required
      * @bodyParam phone string required
      * @bodyParam password string required
+     * 
+     * @responseFile responses/auth/with-token.json
      */
     public function register(Request $request)
     {
@@ -38,6 +40,7 @@ class AuthenticationController extends Controller
     /**
      * Get the current user
      *
+     * @responseFile responses/auth/current.json
      */
     public function user(Request $request)
     {
@@ -49,6 +52,8 @@ class AuthenticationController extends Controller
      * 
      * @bodyParam email string required
      * @bodyParam password string required
+     * 
+     * @responseFile responses/auth/with-token.json
      */
     public function login(Request $request)
     {
@@ -63,7 +68,9 @@ class AuthenticationController extends Controller
              */
             $user = User::whereEmail($data['email'])->first();
             Auth::login($user);
-            return $user->withAccessToken('auth');
+            return $user->withAccessToken(
+                $user->createToken('auth')
+            );
         }
     }
 

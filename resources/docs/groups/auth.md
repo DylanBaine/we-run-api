@@ -13,7 +13,7 @@ curl -X POST \
     "http://localhost/api/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"est","email":"esse","password":"aperiam"}'
+    -d '{"name":"quos","email":"eos","phone":"neque","password":"et"}'
 
 ```
 
@@ -28,9 +28,10 @@ let headers = {
 };
 
 let body = {
-    "name": "est",
-    "email": "esse",
-    "password": "aperiam"
+    "name": "quos",
+    "email": "eos",
+    "phone": "neque",
+    "password": "et"
 }
 
 fetch(url, {
@@ -41,6 +42,17 @@ fetch(url, {
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "test@test.com",
+    "phone": "3305550125",
+    "token": "1|fiennkasosdf78asnasdfn7a0adnafsoi"
+}
+```
 <div id="execution-results-POSTapi-register" hidden>
     <blockquote>Received response<span id="execution-response-status-POSTapi-register"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-POSTapi-register"></code></pre>
@@ -72,6 +84,11 @@ fetch(url, {
 <br>
 </p>
 <p>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="phone" data-endpoint="POSTapi-register" data-component="body" required  hidden>
+<br>
+</p>
+<p>
 <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="password" data-endpoint="POSTapi-register" data-component="body" required  hidden>
 <br>
@@ -92,7 +109,7 @@ curl -X POST \
     "http://localhost/api/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"sunt","password":"sint"}'
+    -d '{"email":"fugiat","password":"voluptate"}'
 
 ```
 
@@ -107,8 +124,8 @@ let headers = {
 };
 
 let body = {
-    "email": "sunt",
-    "password": "sint"
+    "email": "fugiat",
+    "password": "voluptate"
 }
 
 fetch(url, {
@@ -119,6 +136,17 @@ fetch(url, {
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "test@test.com",
+    "phone": "3305550125",
+    "token": "1|fiennkasosdf78asnasdfn7a0adnafsoi"
+}
+```
 <div id="execution-results-POSTapi-login" hidden>
     <blockquote>Received response<span id="execution-response-status-POSTapi-login"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
@@ -239,11 +267,14 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (200):
 
 ```json
 {
-    "message": "Unauthenticated."
+    "id": 1,
+    "name": "John Doe",
+    "email": "test@test.com",
+    "phone": "3305550125"
 }
 ```
 <div id="execution-results-GETapi-user" hidden>

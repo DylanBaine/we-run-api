@@ -67,7 +67,7 @@ curl -X POST \
     "http://localhost/api/user-friends/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["ducimus"]}'
+    -d '{"resources":["quod"]}'
 
 ```
 
@@ -83,7 +83,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "ducimus"
+        "quod"
     ]
 }
 
@@ -137,7 +137,7 @@ curl -X PATCH \
     "http://localhost/api/user-friends/batch" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"resources":["vel"]}'
+    -d '{"resources":["et"]}'
 
 ```
 
@@ -153,7 +153,7 @@ let headers = {
 
 let body = {
     "resources": [
-        "vel"
+        "et"
     ]
 }
 
@@ -322,7 +322,7 @@ curl -X POST \
     "http://localhost/api/user-friends" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"invitee_id":11}'
+    -d '{"invitee_id":15}'
 
 ```
 
@@ -337,7 +337,7 @@ let headers = {
 };
 
 let body = {
-    "invitee_id": 11
+    "invitee_id": 15
 }
 
 fetch(url, {
@@ -386,14 +386,14 @@ the id of the user to invite as a friend</p>
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/user-friends/vero" \
+    -G "http://localhost/api/user-friends/commodi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/user-friends/vero"
+    "http://localhost/api/user-friends/commodi"
 );
 
 let headers = {
@@ -453,16 +453,16 @@ Accept or remove the request.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/user-friends/odit" \
+    "http://localhost/api/user-friends/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"status":"quia"}'
+    -d '{"status":"ut"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/user-friends/odit"
+    "http://localhost/api/user-friends/ut"
 );
 
 let headers = {
@@ -471,7 +471,7 @@ let headers = {
 };
 
 let body = {
-    "status": "quia"
+    "status": "ut"
 }
 
 fetch(url, {
@@ -530,14 +530,14 @@ can be updated to "accepted" or "declined"</p>
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/user-friends/ad" \
+    "http://localhost/api/user-friends/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/user-friends/ad"
+    "http://localhost/api/user-friends/eum"
 );
 
 let headers = {

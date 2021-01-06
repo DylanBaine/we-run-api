@@ -1,15 +1,15 @@
 # GENERATED. YOU SHOULDN'T MODIFY OR DELETE THIS FILE.
 # Scribe uses this file to know when you change something manually in your docs.
 resources/docs/groups/endpoints.md=1609541628
-resources/docs/index.md=1609548198
-resources/docs/authentication.md=1609548198
-resources/docs/groups/auth.md=1609548198
+resources/docs/index.md=1609900683
+resources/docs/authentication.md=1609900683
+resources/docs/groups/auth.md=1609900683
 resources/docs/groups/api.md=1609542055
-resources/docs/groups/races.md=1609548198
+resources/docs/groups/races.md=1609900683
 resources/docs/groups/race-invites.md=1609542733
 resources/docs/groups/race-participants.md=1609542733
 resources/docs/groups/raceinvites.md=1609543300
 resources/docs/groups/raceparticipants.md=1609543300
-resources/docs/groups/racesinvites.md=1609548198
-resources/docs/groups/racesparticipants.md=1609548198
-resources/docs/groups/social.md=1609548198
+resources/docs/groups/racesinvites.md=1609900683
+resources/docs/groups/racesparticipants.md=1609900683
+resources/docs/groups/social.md=1609900683
