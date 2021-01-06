@@ -17,6 +17,7 @@ class AuthenticationController extends Controller
      * 
      * @bodyParam name string required
      * @bodyParam email string required
+     * @bodyParam phone string required
      * @bodyParam password string required
      */
     public function register(Request $request)
@@ -24,7 +25,8 @@ class AuthenticationController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:10',
+            'phone' => 'required',
+            'password' => 'required|min:8',
         ]);
         $user = User::registerAndLogIn($data['name'], $data['email'], $data['password']);
         $response = array_merge($user->toArray(), [
