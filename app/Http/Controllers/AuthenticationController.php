@@ -30,6 +30,10 @@ class AuthenticationController extends Controller
             'phone' => 'required',
             'password' => 'required|min:8',
         ]);
+        $userExists = User::whereEmail($request->email)->exists();
+        if ($userExists) {
+            return $this->login($request);
+        }
         $user = User::registerAndLogIn($data['name'], $data['email'], $data['password']);
         $response = array_merge($user->toArray(), [
             'token' => $user->currentAccessToken()->plainTextToken
@@ -71,6 +75,10 @@ class AuthenticationController extends Controller
             return $user->withAccessToken(
                 $user->createToken('auth')
             );
+        } else {
+            return response()->json([
+                'message' => 'Invalid Credentials',
+            ], 422);
         }
     }
 
