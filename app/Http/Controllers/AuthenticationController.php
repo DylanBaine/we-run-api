@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CurrentUserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,9 +36,7 @@ class AuthenticationController extends Controller
             return $this->login($request);
         }
         $user = User::registerAndLogIn($data['name'], $data['email'], $data['password']);
-        $response = array_merge($user->toArray(), [
-            'token' => $user->currentAccessToken()->plainTextToken
-        ]);
+        $response = new CurrentUserResource($user);
         return $response;
     }
 
@@ -48,7 +47,7 @@ class AuthenticationController extends Controller
      */
     public function user(Request $request)
     {
-        return $request->user();
+        return new CurrentUserResource($request->user());
     }
 
     /**
@@ -72,9 +71,9 @@ class AuthenticationController extends Controller
              */
             $user = User::whereEmail($data['email'])->first();
             Auth::login($user);
-            return $user->withAccessToken(
+            return new CurrentUserResource($user->withAccessToken(
                 $user->createToken('auth')
-            );
+            ));
         } else {
             return response()->json([
                 'message' => 'Invalid Credentials',

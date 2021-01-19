@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/docs', function() {
     return view('scribe.index');
 });
+
+Route::view('/auth/reset-password', 'reset-password')->name('password.reset');
